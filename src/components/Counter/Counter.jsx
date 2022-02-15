@@ -6,6 +6,8 @@ class Counter extends React.Component {
     good: 0,
     neutral: 0,
     bad: 0,
+    total: 0,
+    positive: 0,
   };
 
   goodClick = () => {
@@ -17,6 +19,8 @@ class Counter extends React.Component {
   badClick = () => {
     this.setState(prevState => ({ bad: prevState.bad + 1 }));
   };
+  countTotalFeedback = () => {};
+  countPositiveFeedbackPercentage = () => {};
 
   render() {
     return (
@@ -53,9 +57,11 @@ class Counter extends React.Component {
         </ul>
         <div className={Style.title}>Statistics</div>
         <ul>
-          <li>Good: {this.state.good}</li>
-          <li>Neutral: {this.state.neutral}</li>
-          <li>Bad: {this.state.bad}</li>
+          <li className={Style.liRespons}>Good: {this.state.good}</li>
+          <li className={Style.liRespons}>Neutral: {this.state.neutral}</li>
+          <li className={Style.liRespons}>Bad: {this.state.bad}</li>
+          <li className={Style.liRespons}>Total: {this.state.total}</li>
+          <li className={Style.liRespons}>Positive: {this.state.positive}</li>
         </ul>
       </div>
     );
