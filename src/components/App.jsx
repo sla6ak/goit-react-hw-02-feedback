@@ -1,4 +1,4 @@
-import style from './App.module.css';
+// import style from './App.module.css';
 import Counter from './Counter/Counter';
 
 const App = () => {
