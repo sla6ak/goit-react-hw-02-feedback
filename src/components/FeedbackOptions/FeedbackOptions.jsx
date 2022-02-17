@@ -1,5 +1,7 @@
 import s from './FeedbackOptions.module.css';
 import React from 'react';
+import propTypes from 'prop-types';
+import { string } from 'prop-types';
 
 const FeedbackOptions = props => {
   return (
@@ -20,5 +22,7 @@ const FeedbackOptions = props => {
     </ul>
   );
 };
-
+FeedbackOptions.propTypes = {
+  options: propTypes.arrayOf(string),
+};
 export default FeedbackOptions;

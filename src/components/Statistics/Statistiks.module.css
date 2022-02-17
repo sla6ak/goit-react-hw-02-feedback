@@ -6,3 +6,18 @@
   background-color: rgb(226, 255, 255);
   padding: 5px 35px;
 }
+.li {
+  padding: 5px;
+}
+.ok {
+  composes: li;
+  color: rgb(0, 131, 7);
+}
+.neutral {
+  composes: li;
+  color: rgb(158, 158, 158);
+}
+.bad {
+  composes: li;
+  color: rgb(190, 6, 6);
+}

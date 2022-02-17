@@ -1,5 +1,5 @@
-import { Children } from 'react/cjs/react.production.min';
 import s from './Section.module.css';
+import propTypes from 'prop-types';
 
 const Section = ({ title, children }) => {
   return (
@@ -8,5 +8,8 @@ const Section = ({ title, children }) => {
       {children}
     </div>
   );
+};
+Section.propTypes = {
+  title: propTypes.string,
 };
 export default Section;
