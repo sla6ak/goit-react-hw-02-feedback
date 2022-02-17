@@ -1,0 +1,17 @@
+.box {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+}
+.bt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  height: 30px;
+  width: 90px;
+  color: rgb(53, 48, 27);
+  box-shadow: -2px -2px 7px rgb(109, 109, 109);
+}

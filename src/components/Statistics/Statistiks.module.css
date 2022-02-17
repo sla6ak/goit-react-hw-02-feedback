@@ -1,0 +1,8 @@
+.list {
+  list-style: none;
+  color: rgb(99, 99, 99);
+  font-weight: 400;
+  text-shadow: -1px -1px 1px rgb(0, 7, 104);
+  background-color: rgb(226, 255, 255);
+  padding: 5px 35px;
+}

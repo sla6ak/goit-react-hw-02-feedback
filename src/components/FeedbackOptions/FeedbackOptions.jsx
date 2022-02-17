@@ -1,0 +1,24 @@
+import s from './FeedbackOptions.module.css';
+import React from 'react';
+
+const FeedbackOptions = props => {
+  return (
+    <ul className={s.box}>
+      {props.options.map(option => {
+        return (
+          <li key={option}>
+            <button
+              className={s.bt}
+              type="button"
+              onClick={() => props.onLeaveFeedback(option)}
+            >
+              {option}
+            </button>
+          </li>
+        );
+      })}
+    </ul>
+  );
+};
+
+export default FeedbackOptions;
