@@ -19,8 +19,12 @@ class App extends React.Component {
     this.setState(preState => ({ [tipeClick]: preState[tipeClick] + 1 }));
   };
 
-  onTotalCounter = () =>
-    Object.values(this.state).reduce((accum, elem) => (accum += elem), 0);
+  onTotalCounter = () => {
+    // Исправление№2. Согласен можно и без редьюса, но выглядит такое решение менее изящно. Нас учили что редьюс это счетчик в JS.
+    // Object.values( this.state ).reduce( ( accum, elem ) => ( accum += elem ), 0 );
+    const sum = this.state.good + this.state.neutral + this.state.bad;
+    return sum;
+  };
 
   positivePercentage = () => {
     const ok = this.state.good;
@@ -31,6 +35,9 @@ class App extends React.Component {
     return percentage;
   };
 
+  // Исправление №1. я не совсем понял почему вы рисовали стрелку внутри рендара? константы там ни на что не влияют и лишь повышают читаемость кода. если создавать массив там то константа всеравно будет переписываться при каждом рендере. я так понял вы имелли ввиду создать массив вне рендера. я подумал что внутри функции переменная опять таки будет создавать новый массив при каждом вызове функции поэтому написал в лоб. не уверен что это вообще правильно для такого короткого массива. выглядит странно.
+  keysState = Object.keys(this.state);
+
   render() {
     // для повышения читаемости делаем константы а не передаем в пропсы напрямую.
     const total = this.onTotalCounter();
@@ -40,7 +47,7 @@ class App extends React.Component {
       <div className={s.body}>
         <Section title="Please leave feedback">
           <FeedbackOptions
-            options={Object.keys(this.state)}
+            options={this.keysState}
             onLeaveFeedback={this.onClickFitbak}
           />
         </Section>
